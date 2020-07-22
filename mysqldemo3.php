@@ -27,6 +27,7 @@ $result = mysqli_query($conn,$sql);
 //var_dump($result);
 if(mysqli_num_rows($result)>0){
     echo "<table>";
+    echo "<tr><th>Product Name</th><th>Price</th></tr>";
     while($row=mysqli_fetch_assoc($result)){
         //var_dump($row);
         echo "<tr><td>".$row['pname']."</td><td>".$row['price']."</td></tr>";
