@@ -5,29 +5,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-echo "ouput from mysqldemo3.php";
+
 $host="localhost";
 $uname="root";
 $pwd = "password";
 $dbname="php_training";
 
-//$conn = new mysqli($host,$uname,$pwd,$dbname);
-$conn = mysqli_connect($host, $uname, $pwd, $dbname);       
-
-/*if($conn->connect_errno)
+$conn = new mysqli($host,$uname,$pwd,$dbname);
+        
+if($conn->connect_errno)
     die("Connection Error ".$conn->connect_errno);
-*/
-if(!$conn){
-    die("Connection Error ". mysqli_connect_errno());
-}
 
 $sql = "SELECT * FROM `product`, `product_price` where product.pid = product_price.pid and edate is NULL";
-$result = mysqli_query($conn,$sql);
+
+$result = $conn->query($sql);
 
 //var_dump($result);
-if(mysqli_num_rows($result)>0){
+if($result->num_rows>0){
     echo "<table>";
-    while($row=mysqli_fetch_assoc($result)){
+    while($row=$result->fetch_assoc()){
         //var_dump($row);
         echo "<tr><td>".$row['pname']."</td><td>".$row['price']."</td></tr>";
     }

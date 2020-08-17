@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            var students=[{slno:101,name:"Raja",age:18},
+                                        {slno:102,name:"Ravi",age:17},
+                                        {slno:103,name:"Ramesh",age:18},
+                                        {slno:104,name:"Madhu",age:19}];
+            
+        </script>
+    </head>
+    <body>
+        <div id="content">
+            <table>
+                <thead>
+                <tr>
+                    <th>Slno</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+                </thead>
+                <tbody>
+                    
+                <script type="text/javascript">
+                    for(i=0;i<students.length;i++){
+                        document.write("<tr><td>"+students[i].slno+"</td>");
+                        document.write("<td>"+students[i]["name"]+"</td>");
+                        document.write("<td>"+students[i].age+"</td></tr>");
+                    }
+                </script>
+                    
+                </tbody>
+            </table>
+            
+        </div>
+    </body>
+</html>
